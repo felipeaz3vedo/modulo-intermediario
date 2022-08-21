@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada - Aula 02</title>
+</head>
+
+<body>
+    <noscript>Seu navegador não suporta JavaScript ou ele está desabilitado.</noscript>
+
+    <h1>Exercício</h1>
+
+    <h2>Atividade 02-2</h2>
+
+    <p id="minhaResposta"></p>
+
+    <script>
+        const array = [0, 3.14, Infinity, NaN, true, (4 > 1), 'texto', 'É treta' + 1994,
+            Symbol("id"), Date, String, [1, 2, 3, 4], null, undefined, alert]
+
+        let resposta = '';
+
+        array.forEach(curr => {
+            resposta += `<li style="list-style-type: none">${typeof curr}</li>`;
+        })
+
+        document.getElementById("minhaResposta").innerHTML = resposta
+    </script>
+</body>
+
+</html>

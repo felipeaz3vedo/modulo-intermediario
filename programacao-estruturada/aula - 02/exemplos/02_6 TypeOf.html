@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada - Aula 02</title>
+ </head>
+
+<body>
+    <noscript>Seu navegador não suporta JavaScript ou ele está desabilitado.</noscript>
+
+    <h1>Testando Script</h1>
+
+    <p id="texto1"></p>
+
+    <script>
+    function f() {}    
+
+    var t1 = typeof 0;              // "number"
+    var t2 = typeof true;           // "boolean"
+    var t3 = typeof "legal";        // "string"
+    var t4 = typeof null;           // "object"
+    var t5 = typeof undefined;      // "undefined"
+    var t6 = typeof x;              // "undefined"
+    var t7 = typeof {x:10};         // "object"
+    var t8 = typeof [1,2,3,4];      // "object"
+    var t9 = typeof f;              // "function"
+    var t10 = typeof Symbol("id");   // "symbol"
+
+    document.getElementById("texto1").innerHTML = t10;
+    
+    </script>
+
+</body>
+
+</html>

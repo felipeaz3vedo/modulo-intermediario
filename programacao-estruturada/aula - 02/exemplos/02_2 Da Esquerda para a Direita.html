@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada - Aula 02</title>
+ </head>
+
+<body>
+    <noscript>Seu navegador não suporta JavaScript ou ele está desabilitado.</noscript>
+
+    <h1>Da Esquerda para a Direita</h1>
+
+    <p id="texto1"></p>
+    <p id="texto2"></p>
+    <p id="texto3"></p>
+
+    <script>
+    var x = "olá mundo" + 12 + 8;
+    document.getElementById("texto1").innerHTML = x;
+
+    // Note que JavaScript é Case Sensitive    
+    var X = "olá mundo" + (12 + 8);
+    document.getElementById("texto2").innerHTML = X;
+
+    var z = 12 + 8 + "olá mundo";
+    document.getElementById("texto3").innerHTML = z;
+    </script>
+
+</body>
+
+</html>
