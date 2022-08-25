@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Programação Estruturada</title>
+</head>
+
+<body>
+
+  <label for="a">Primeiro número</label>
+  <input type="number" name="a" id="a" placeholder="nº 1">
+  <label for="b">Segundo número</label>
+  <input type="number" name="a" id="b" placeholder="nº 2">
+  <button id="btn" onclick="soma()">Calcular</button>
+  <p><strong>Resultado:</strong> <span id="resultado"></span></p>
+
+  <style>
+    input {
+      width: 100px;
+      margin-bottom: 16px;
+      margin-right: 16px;
+    }
+
+    btn:hover {
+      opacity: 0.7;
+    }
+  </style>
+
+  <script>
+    function soma() {
+      const a = Number(document.getElementById('a').value)
+      const b = Number(document.getElementById('b').value)
+      const resultado = document.getElementById('resultado')
+
+      return resultado.innerHTML = `${a} + ${b} = ${a + b}`
+    }
+  </script>
+
+</body>
+
+</html>4

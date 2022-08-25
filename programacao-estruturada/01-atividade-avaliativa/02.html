@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Programação Estruturada</title>
+</head>
+
+<body>
+
+  <label for="a">Primeiro número</label>
+  <input type="number" name="a" id="a" placeholder="nº 1">
+  <label for="b">Segundo número</label>
+  <input type="number" name="a" id="b" placeholder="nº 2">
+  <button id="btn">Calcular</button>
+  <p><strong>Resultado:</strong> <span id="resultado"></span></p>
+
+
+  <style>
+    input {
+      width: 100px;
+      margin-bottom: 16px;
+      margin-right: 16px;
+    }
+
+    btn:hover {
+      opacity: 0.7;
+    }
+  </style>
+  <script>
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+    const btn = document.getElementById('btn');
+    const resultado = document.getElementById('resultado');
+
+    btn.addEventListener('click', () => resultado.innerHTML = `A média aritmética dos números inseridos é: ${((+a.value) + (+b.value)) / 2}`)
+  </script>
+</body>
+
+</html>
