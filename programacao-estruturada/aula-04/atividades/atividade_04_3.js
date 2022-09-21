@@ -3,25 +3,25 @@ passados como entrada forem maiores que zero, ou "false", se pelo menos um dos d
 ler_entrada, escrever_saida e maior, as quais também precisarão ter seus corpos definidos. */
 
 function positivos() {
-    const x = ler_entrada('entrada1');
-    const y = ler_entrada('entrada2');
+  const x = ler_entrada('entrada1');
+  const y = ler_entrada('entrada2');
 
-    const z = [x, y];
+  const z = [x, y];
 
-    const result = maior(z, 0);
+  const result = maior(z, 0);
 
-    escrever_saida('saida', result);
+  escrever_saida('saida', result);
 }
 
 function ler_entrada(input) {
-    return Number(document.getElementById(input).value);
+  return Number(document.getElementById(input).value);
 }
 
 function escrever_saida(element, result) {
-    return (document.getElementById(element).innerHTML = result);
+  return (document.getElementById(element).innerHTML = result);
 }
 
 function maior(values, threshold) {
-    return values.every(curr => curr > threshold);
+  return values.every(curr => curr > threshold);
 }
 

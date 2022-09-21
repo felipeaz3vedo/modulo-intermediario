@@ -1,0 +1,22 @@
+// string.length => retorna o comprimento da string (não é 0 based)
+
+// OBS: os 3 métodos retornam -1 caso não haja ocorrencia do parâmetro especificado na string
+// OBS2: Case sensitive
+// string.indexOf()
+// string.lastIndexOf()
+// string.search()
+
+// string.slice()
+// string.charAt()
+
+// OBS: Substitui apenas a primeia ocorrencia
+// OBS2 : Case sensitive
+// string.replace()
+
+// exemplo de regex para substituição de todas as ocorrencias
+// string.replace(/A/g, "O") => substitui todos os "A" por "O"
+// string.replace(/a/ig, "O") => Case Insensitive + Substitui todos os "A" por "O"
+
+// string.trim() => remove espaços do início e do final da string
+
+//estudar método padStart(target length, 'padString') padEnd(target length, 'padString')
