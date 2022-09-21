@@ -1,0 +1,15 @@
+Formas de criar datas
+
+new Date() // determinado pelo relógio do pc
+new Date(year, month, day, hours, minutes, seconds, milliseconds)  
+new Date(milliseconds)
+new Date(date string)
+
+
+
+Formatos de datas built in
+
+data.toStrint()
+data.toUTCString() // padrão UTC
+data.toDateString() // légivel, porém no formato americano
+data.toTimeString() // (exibe somente a hora)légivel, porém no formato americano
