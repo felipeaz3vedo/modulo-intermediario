@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semana 6 - questão 01</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    N1: <input type="number" id="a" value=""><br />
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+        const executarExercicio = () => {
+            const a = Number(document.getElementById('a').value);
+
+            let r;
+
+            a === 0 && (r = "o valor é zero")
+
+            a < 0 && (r = "o número é negativo")
+
+            a > 0 && (r = "o número é positivo")
+
+            document.getElementById('resultado').innerHTML = r;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semana 6 - questão 06 (com for)</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    N1: <input type="number" id="a" value=""><br />
+    N2: <input type="number" id="b" value=""><br />
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+        const executarExercicio = () => {
+            const a = Number(document.getElementById('a').value);
+            const b = Number(document.getElementById('b').value);
+
+            let i = a;
+            let par = 0;
+            let impar = 0;
+
+            a === b && (r = "Os dois números são iguais, insira números diferentes!")
+
+            if (a < b) {
+                while (i <= b) {
+                    i % 2 === 0 ? par += i : impar += i
+                    i++
+                }
+            }
+
+            if (a > b) {
+                while (i >= b) {
+                    i % 2 === 0 ? par += i : impar += i
+                    i--
+                }
+            }
+
+            r = `Soma dos números pares: ${par} <br>
+                 Soma dos números ímpares: ${impar}`
+
+            document.getElementById('resultado').innerHTML = r;
+        }
+    </script>
+</body>
+
+</html>
