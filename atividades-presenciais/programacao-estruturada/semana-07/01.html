@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semana 07 - questão 01</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+        const executarExercicio = () => {
+            const array = [];
+
+
+            while (!array.includes(0)) {
+                const a = Number(prompt("Informe um número:"));
+                array.push(a);
+            }
+            //estou incluindo o 0 no array
+
+            const arrayEmOrdemCrescente = array.slice().sort((a, b) => a - b);
+
+            document.getElementById('resultado').innerHTML =
+                `
+                Números na ordem em que foram enviados: ${array}
+                <br>
+                <br>
+                Números em ordem crescente: ${arrayEmOrdemCrescente}
+                `;
+        }
+    </script>
+</body>
+
+</html>
