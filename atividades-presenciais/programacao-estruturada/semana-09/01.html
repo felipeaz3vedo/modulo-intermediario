@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Semana 09 - questão 1</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+
+    N1: <input type="text" id="n1">
+    <br />
+    N2: <input type="text" id="n2">
+    <br />
+    N3: <input type="text" id="n3">
+    <br />
+    <button onclick=obterValor()>OK</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function obterValor() {
+            try {
+                const resultado = document.getElementById('resultado');
+
+                let numero1 = document.getElementById('n1').value;
+                let numero2 = document.getElementById('n2').value;
+                let numero3 = document.getElementById('n3').value;
+
+                if (numero1 === '' || numero2 === '' || numero3 === '') {
+                    throw new Error('Preencha todos os campos.');
+
+                } else {
+                    numero1 = Number(numero1);
+                    numero2 = Number(numero2);
+                    numero3 = Number(numero3);
+                }
+
+                const mediaVerificada = verificarResultado( calcularMedia(numero1, numero2, numero3) )
+
+                imprimirNaTela(mediaVerificada)
+
+            } catch (erro) {
+                let mensagem = '';
+
+                erro instanceof TypeError
+                    ? mensagem = 'Erro de tipo: Você tentou pegar o valor de um ID que não existe. Verifique o seu código e passe um ID existente e correspondente ao input desejado'
+                    : mensagem = erro;
+
+                resultado.innerHTML = mensagem;
+            }
+        }
+
+        const calcularMedia = (n1, n2, n3) => {
+            const media = (n1 + n2 + n3) / 3;
+
+            if (isNaN(media)) {
+                throw new Error('Insira apenas números.')
+            }
+            else {
+                return media;
+            }
+        }
+
+        const verificarResultado = (media) => {
+            if (media < 0 || media > 10) {
+                throw new Error('Insira valores positivos e menores ou iguais a 10.');
+
+            } else if (media >= 7) {
+                return `Aprovado com média ${media.toFixed(2)}.`;
+
+            } else if (media >= 3) {
+                return `Aluno em recuperação, pois a média foi ${media.toFixed(2)}.`;
+
+            } else {
+                return `Aluno reprovado, pois ficou com média ${media.toFixed(2)}.`;
+
+            }
+        }
+
+        const imprimirNaTela = (resultadoVerificado) => {
+            resultado.innerHTML = resultadoVerificado;
+        }
+
+    </script>
+</body>
+
+</html>

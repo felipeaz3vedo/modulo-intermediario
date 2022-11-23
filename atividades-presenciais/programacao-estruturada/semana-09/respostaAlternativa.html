@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Reposta alternativa</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    <p><strong>Código resposta caso eu estivesse livre para definir as funcões(quantidade, nome e funcionalidade) e em
+            que parte do código os erros devem ser tratados.</strong></p>
+    <p>Construir uma função para checar se os valores dos inputs estão corretos antes de passa-los para as demais
+        funções diminui a complexidade do código</p>
+
+    N1: <input type="text" id="n1">
+    <br />
+    N2: <input type="text" id="n2">
+    <br />
+    N3: <input type="text" id="n3">
+    <br />
+    <button onclick=situacaoDoAluno()>OK</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const situacaoDoAluno = () => {
+            try {
+                const media = calcularMedia( checarInputs( pegarInputs() ) )
+
+                let situacaoDoAluno = '';
+
+                if (media >= 7) {
+                    situacaoDoAluno = `Aprovado com média ${media.toFixed(2)}.`
+
+                } else if (media >= 3) {
+                    situacaoDoAluno = `Aluno em recuperação, pois a média foi ${media.toFixed(2)}.`;
+
+                } else {
+                    situacaoDoAluno = `Aluno reprovado, pois ficou com média ${media.toFixed(2)}.`
+                }
+
+
+                document.getElementById('resultado').innerHTML = situacaoDoAluno
+
+            } catch (erro) {
+                document.getElementById('resultado').innerHTML = erro
+            }
+        }
+
+        const pegarInputs = () => {
+            const numero1 = document.getElementById('n1').value;
+            const numero2 = document.getElementById('n2').value;
+            const numero3 = document.getElementById('n3').value;
+
+            return [numero1, numero2, numero3]
+        }
+
+        const checarInputs = (valores) => {
+            if (valores.includes('')) {
+                throw new Error('Preencha todos os campos')
+
+            } else if (valores.some(curr => isNaN(curr))) {
+                throw new Error('Insira apenas números')
+
+            } else if (valores.some((curr) => (curr < 0) || (curr > 10))) {
+                throw new Error('Insira apenas números positivos e menores ou iguais a 10')
+
+            } else {
+                return valores.map(Number)
+
+            }
+        }
+
+        const calcularMedia = (valuesChecked) => {
+            return valuesChecked.reduce((acc, curr) => acc += (curr / 3), 0)
+        }
+
+    </script>
+</body>
+
+</html>
